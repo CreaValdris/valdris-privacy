@@ -12,31 +12,43 @@
   .date { color: #6b6255; font-size: .95em; }
   nav a { margin-right: 1em; }
   hr { margin: 3em 0; border: 0; border-top: 2px solid #d9cdb8; }
-  ul { padding-left: 1.3em; }
+  ul, ol { padding-left: 1.3em; }
+  .encadre { background: #f1e9da; border-left: 4px solid #b8955a; padding: .6em 1em; }
 </style>
 </head>
 <body>
 
-<nav><a href="#fr">Français</a><a href="#en">English</a></nav>
+<nav><a href="#fr">Français</a><a href="#en">English</a><a href="#suppression">Supprimer mon compte</a><a href="#deletion">Delete my account</a></nav>
 
 <section id="fr">
 <h1>Valdris — Légendes de Guerre<br>Politique de confidentialité</h1>
-<p class="date">Dernière mise à jour : 28 septembre 2026</p>
+<p class="date">Dernière mise à jour : 3 octobre 2026</p>
 
 <p>Valdris — Légendes de Guerre est un jeu mobile édité par <b>CreaValdris</b>, développeur indépendant. Cette page explique quelles données
 le jeu utilise, pourquoi, et quels sont vos droits.</p>
 <p>Contact : <a href="mailto:creavaldris@gmail.com"><b>creavaldris@gmail.com</b></a></p>
 
 <h2>1. Ce que le jeu enregistre sur votre téléphone</h2>
-<p>Votre partie (héros, objets, progression, réglages de son et de langue) est enregistrée <b>sur votre appareil</b>.
-Elle n'est pas envoyée sur nos serveurs. Désinstaller le jeu l'efface.</p>
+<p>Votre partie (héros, objets, progression, points VIP, réglages de son et de langue) est enregistrée <b>sur votre appareil</b>.
+Une copie de sauvegarde est aussi conservée en ligne (voir 2), pour que vous puissiez la retrouver sur un autre appareil
+ou après une réinstallation.</p>
 
 <h2>2. Ce qui est envoyé en ligne, et pourquoi</h2>
 <ul>
-  <li><b>Un identifiant anonyme</b> (Firebase Authentication), créé au premier lancement, pour vous reconnaître dans
-  l'Arène en ligne. Il n'est lié ni à votre nom, ni à votre e-mail, ni à votre numéro.</li>
-  <li><b>Vos données d'Arène</b> : pseudo, portrait choisi, niveau, héros de votre défense, puissance et rang. Elles sont
-  <b>visibles des autres joueurs</b> : c'est le principe du classement.</li>
+  <li><b>Un identifiant de compte</b> (Firebase Authentication), créé au premier lancement sans rien vous demander, pour vous
+  reconnaître dans l'Arène et retrouver votre sauvegarde. Il n'est lié ni à votre nom, ni à votre e-mail, ni à votre numéro,
+  sauf si vous le liez à Google Play Jeux (ci-dessous).</li>
+  <li><b>Votre compte Google Play Jeux</b>, s'il est lié : si vous êtes connecté à Google Play Jeux sur votre appareil, le jeu
+  s'y connecte ; sinon, vous pouvez le faire dans <i>Réglages → Compte → LIER MON COMPTE</i>. Le jeu reçoit alors de Google
+  votre <b>identifiant de joueur Play Jeux</b> et votre <b>nom de joueur Play Jeux</b>, rattachés à votre identifiant de compte,
+  pour retrouver votre partie sur un autre appareil. Le jeu ne reçoit <b>ni votre adresse e-mail, ni votre mot de passe</b>.</li>
+  <li><b>Votre sauvegarde en ligne</b> (Google Cloud Firestore) : une copie complète de votre partie, un résumé (niveau du
+  château, nombre de héros, or, pseudo), le modèle de l'appareil qui l'a écrite, un identifiant d'installation tiré au
+  hasard et la version du jeu. Elle est mise à jour régulièrement pendant que vous jouez, <b>n'est visible que de vous</b>,
+  et ne sert qu'à restaurer votre partie.</li>
+  <li><b>Vos données d'Arène</b> : pseudo, portrait, titre, blason et habillage portés, niveau VIP, niveau, héros de votre
+  défense, puissance, rang et défenses réussies. Elles sont <b>visibles des autres joueurs</b> : c'est le principe du
+  classement.</li>
   <li><b>Les signalements de l'anti-triche</b> : pseudo, motif détecté, version du jeu et type d'appareil, pour garder
   l'Arène équitable.</li>
   <li><b>Des statistiques d'utilisation</b> (Firebase Analytics) : écrans visités, événements de jeu, achats effectués (produit et prix), modèle
@@ -51,13 +63,14 @@ Elle n'est pas envoyée sur nos serveurs. Désinstaller le jeu l'efface.</p>
 
 <h2>3. Achats</h2>
 <p>Les achats intégrés sont traités par <b>Google Play</b>. Le jeu ne voit jamais vos moyens de paiement : il ne reçoit
-qu'une confirmation d'achat pour vous remettre le contenu acheté.</p>
+qu'une confirmation d'achat pour vous remettre le contenu acheté. Chaque achat donne des <b>points VIP</b>, conservés dans
+votre partie et sa sauvegarde en ligne ; votre <b>niveau VIP</b> est visible des autres joueurs.</p>
 
 <h2>4. Ce que nous ne faisons pas</h2>
 <ul>
   <li>Le jeu n'affiche <b>aucune publicité</b> et ne vous suit pas à des fins publicitaires.</li>
   <li>Nous ne <b>vendons</b> ni ne louons aucune donnée.</li>
-  <li>Nous ne demandons ni votre nom, ni votre adresse, ni vos contacts, ni votre position précise.</li>
+  <li>Nous ne demandons ni votre adresse, ni vos contacts, ni votre position précise.</li>
 </ul>
 
 <h2>5. Qui traite ces données</h2>
@@ -67,45 +80,68 @@ prévues par Google (clauses contractuelles types). Comme pour tout service en l
 
 <h2>6. Durée de conservation</h2>
 <ul>
-  <li>Identifiant et données d'Arène : tant que vous jouez ; supprimés sur simple demande.</li>
+  <li>Identifiant de compte, lien avec Google Play Jeux, sauvegarde en ligne et données d'Arène : tant que vous jouez ;
+  supprimés sur simple demande (voir 7).</li>
   <li>Statistiques d'utilisation : 14 mois au plus.</li>
   <li>Rapports de plantage : 90 jours.</li>
 </ul>
 
-<h2>7. Vos droits</h2>
-<p>Conformément au RGPD, vous pouvez demander l'accès à vos données, leur rectification ou leur <b>suppression</b>
-(notamment votre fiche d'Arène), en écrivant à l'adresse de contact ci-dessus avec votre pseudo. Vous pouvez aussi
-adresser une réclamation à la CNIL (www.cnil.fr).</p>
+<h2 id="suppression">7. Supprimer votre compte et vos données</h2>
+<div class="encadre">
+<ol>
+  <li>Écrivez à <a href="mailto:creavaldris@gmail.com?subject=Suppression%20de%20compte"><b>creavaldris@gmail.com</b></a>
+  avec pour objet <b>« Suppression de compte »</b>.</li>
+  <li>Indiquez votre <b>pseudo</b> (visible dans le jeu : <i>Réglages → MON PROFIL</i>).</li>
+  <li>Vous recevez une confirmation quand la suppression est faite, <b>sous 30 jours</b>.</li>
+</ol>
+</div>
+<p><b>Sont supprimés</b> : votre identifiant de compte, le lien avec Google Play Jeux, votre sauvegarde en ligne, votre
+fiche d'Arène et vos signalements de l'anti-triche.<br>
+<b>Ne sont pas supprimés sur demande</b> : les statistiques d'utilisation et les rapports de plantage, qui ne contiennent ni
+votre pseudo ni votre partie, et s'effacent d'eux-mêmes après les durées indiquées en 6.<br>
+La partie enregistrée sur votre téléphone s'efface en désinstallant le jeu.</p>
 
-<h2>8. Enfants</h2>
+<h2>8. Vos droits</h2>
+<p>Conformément au RGPD, vous pouvez demander l'accès à vos données, leur rectification ou leur <b>suppression</b>
+(voir 7), en écrivant à l'adresse de contact ci-dessus avec votre pseudo. Vous pouvez aussi adresser une réclamation à
+la CNIL (www.cnil.fr).</p>
+
+<h2>9. Enfants</h2>
 <p>Valdris ne s'adresse pas aux enfants de moins de <b>13 ans</b> et ne collecte pas sciemment de données les
 concernant.</p>
 
-<h2>9. Modifications</h2>
-<p>Cette page peut évoluer avec le jeu (par exemple à l'arrivée d'une sauvegarde en ligne). La date en haut de page
-indique la dernière version.</p>
+<h2>10. Modifications</h2>
+<p>Cette page peut évoluer avec le jeu. La date en haut de page indique la dernière version.</p>
 </section>
 
 <hr>
 
 <section id="en" lang="en">
 <h1>Valdris — Legends of War<br>Privacy Policy</h1>
-<p class="date">Last updated: September 28, 2026</p>
+<p class="date">Last updated: October 3, 2026</p>
 
 <p>Valdris — Legends of War is a mobile game published by <b>CreaValdris</b>, an independent developer. This page explains what data the
 game uses, why, and what your rights are.</p>
 <p>Contact: <a href="mailto:creavaldris@gmail.com"><b>creavaldris@gmail.com</b></a></p>
 
 <h2>1. What the game stores on your phone</h2>
-<p>Your game (heroes, items, progress, sound and language settings) is saved <b>on your device</b>. It is not sent to
-our servers. Uninstalling the game erases it.</p>
+<p>Your game (heroes, items, progress, VIP points, sound and language settings) is saved <b>on your device</b>. A backup
+copy is also kept online (see 2), so you can get it back on another device or after reinstalling.</p>
 
 <h2>2. What is sent online, and why</h2>
 <ul>
-  <li><b>An anonymous identifier</b> (Firebase Authentication), created on first launch, to recognize you in the online
-  Arena. It is not linked to your name, e-mail or phone number.</li>
-  <li><b>Your Arena data</b>: username, chosen portrait, level, defense heroes, power and rank. It is <b>visible to other
-  players</b>: that is how the ranking works.</li>
+  <li><b>An account identifier</b> (Firebase Authentication), created on first launch without asking you anything, to
+  recognize you in the Arena and find your backup. It is not linked to your name, e-mail or phone number, unless you link
+  it to Google Play Games (below).</li>
+  <li><b>Your Google Play Games account</b>, if linked: if you are signed in to Google Play Games on your device, the game
+  signs in to it; otherwise you can do it in <i>Settings → Account → LINK MY ACCOUNT</i>. The game then receives from Google
+  your <b>Play Games player ID</b> and your <b>Play Games player name</b>, attached to your account identifier, so you can
+  find your game on another device. The game receives <b>neither your e-mail address nor your password</b>.</li>
+  <li><b>Your online backup</b> (Google Cloud Firestore): a full copy of your game, a summary (castle level, number of
+  heroes, gold, username), the model of the device that wrote it, a random installation identifier and the game version.
+  It is updated regularly while you play, is <b>visible only to you</b>, and is used only to restore your game.</li>
+  <li><b>Your Arena data</b>: username, portrait, worn title, crest and skin, VIP level, level, defense heroes, power, rank
+  and successful defenses. It is <b>visible to other players</b>: that is how the ranking works.</li>
   <li><b>Anti-cheat reports</b>: username, detected reason, game version and device type, to keep the Arena fair.</li>
   <li><b>Usage statistics</b> (Firebase Analytics): screens visited, game events, purchases made (product and price), device model, operating system,
   language, approximate country, an installation identifier and, on Android, the device advertising ID (used only for
@@ -117,13 +153,14 @@ our servers. Uninstalling the game erases it.</p>
 
 <h2>3. Purchases</h2>
 <p>In-app purchases are processed by <b>Google Play</b>. The game never sees your payment details: it only receives a
-purchase confirmation so it can deliver what you bought.</p>
+purchase confirmation so it can deliver what you bought. Each purchase grants <b>VIP points</b>, kept in your game and its
+online backup; your <b>VIP level</b> is visible to other players.</p>
 
 <h2>4. What we don't do</h2>
 <ul>
   <li>The game shows <b>no ads</b> and does not track you for advertising purposes.</li>
   <li>We do not <b>sell</b> or rent any data.</li>
-  <li>We do not ask for your name, address, contacts or precise location.</li>
+  <li>We do not ask for your address, contacts or precise location.</li>
 </ul>
 
 <h2>5. Who processes this data</h2>
@@ -132,22 +169,37 @@ European Union, notably in the United States, under the safeguards provided by G
 
 <h2>6. Retention</h2>
 <ul>
-  <li>Identifier and Arena data: as long as you play; deleted on request.</li>
+  <li>Account identifier, Google Play Games link, online backup and Arena data: as long as you play; deleted on request
+  (see 7).</li>
   <li>Usage statistics: 14 months at most.</li>
   <li>Crash reports: 90 days.</li>
 </ul>
 
-<h2>7. Your rights</h2>
-<p>Under the GDPR, you can request access to your data, its correction or its <b>deletion</b> (including your Arena
-entry), by writing to the contact address above with your username. You may also file a complaint with your data
-protection authority (in France, the CNIL: www.cnil.fr).</p>
+<h2 id="deletion">7. Delete your account and data</h2>
+<div class="encadre">
+<ol>
+  <li>Write to <a href="mailto:creavaldris@gmail.com?subject=Account%20deletion"><b>creavaldris@gmail.com</b></a> with the
+  subject <b>“Account deletion”</b>.</li>
+  <li>Give your <b>username</b> (shown in the game: <i>Settings → MY PROFILE</i>).</li>
+  <li>You receive a confirmation once the deletion is done, <b>within 30 days</b>.</li>
+</ol>
+</div>
+<p><b>Deleted</b>: your account identifier, the Google Play Games link, your online backup, your Arena entry and your
+anti-cheat reports.<br>
+<b>Not deleted on request</b>: usage statistics and crash reports, which contain neither your username nor your game,
+and expire on their own after the periods given in 6.<br>
+The game saved on your phone is erased by uninstalling the game.</p>
 
-<h2>8. Children</h2>
+<h2>8. Your rights</h2>
+<p>Under the GDPR, you can request access to your data, its correction or its <b>deletion</b> (see 7), by writing to the
+contact address above with your username. You may also file a complaint with your data protection authority (in France,
+the CNIL: www.cnil.fr).</p>
+
+<h2>9. Children</h2>
 <p>Valdris is not intended for children under <b>13</b> and does not knowingly collect data about them.</p>
 
-<h2>9. Changes</h2>
-<p>This page may change as the game evolves (for example when cloud saves arrive). The date at the top shows the
-latest version.</p>
+<h2>10. Changes</h2>
+<p>This page may change as the game evolves. The date at the top shows the latest version.</p>
 </section>
 
 </body>
